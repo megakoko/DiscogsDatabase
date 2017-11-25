@@ -18,30 +18,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="0mI-YI-Dlk">
-                                <rect key="frame" x="16" y="20" width="260" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nZ7-Tp-Hy8">
+                                <rect key="frame" x="16" y="58" width="343" height="589"/>
                                 <connections>
-                                    <action selector="fetchData:" destination="BYZ-38-t0r" eventType="valueChanged" id="XN6-ai-q3m"/>
+                                    <segue destination="GVa-CC-wRF" kind="embed" identifier="embeddedArtistTableViewSegue" id="aQ7-yE-pma"/>
                                 </connections>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zQn-Aj-awb">
-                                <rect key="frame" x="284" y="19" width="75" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Search"/>
-                                <connections>
-                                    <action selector="fetchData2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9UX-58-uT6"/>
-                                </connections>
-                            </button>
+                            </containerView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="iQr-Tm-n3v">
+                                <rect key="frame" x="19" y="20" width="337" height="30"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="0mI-YI-Dlk">
+                                        <rect key="frame" x="0.0" y="0.0" width="279" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                        <connections>
+                                            <action selector="fetchData:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="Idk-b1-fT2"/>
+                                            <action selector="fetchData:" destination="BYZ-38-t0r" eventType="valueChanged" id="XN6-ai-q3m"/>
+                                        </connections>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zQn-Aj-awb">
+                                        <rect key="frame" x="289" y="0.0" width="48" height="30"/>
+                                        <state key="normal" title="Search"/>
+                                        <connections>
+                                            <action selector="fetchData2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9UX-58-uT6"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="iQr-Tm-n3v" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="20" id="ADp-w9-IMy"/>
+                            <constraint firstAttribute="trailing" secondItem="iQr-Tm-n3v" secondAttribute="trailing" constant="19" id="FEs-YA-KDN"/>
+                            <constraint firstItem="nZ7-Tp-Hy8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Mu3-mv-5Ln"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nZ7-Tp-Hy8" secondAttribute="trailing" constant="16" id="g3r-gt-5Bz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="nZ7-Tp-Hy8" secondAttribute="bottom" constant="20" id="iOc-OY-F40"/>
+                            <constraint firstItem="nZ7-Tp-Hy8" firstAttribute="top" secondItem="iQr-Tm-n3v" secondAttribute="bottom" constant="8" id="jrM-mI-a5n"/>
+                            <constraint firstItem="iQr-Tm-n3v" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="19" id="oxn-Y8-Hwc"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="mainView" destination="8bC-Xf-vdC" id="Stm-ta-bm0"/>
                         <outlet property="searchField" destination="0mI-YI-Dlk" id="rZt-q0-ndx"/>
                         <outlet property="view" destination="8bC-Xf-vdC" id="iwj-io-3ld"/>
                     </connections>
@@ -49,6 +67,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="140" y="133.5832083958021"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="n3j-jD-dbc">
+            <objects>
+                <tableViewController id="GVa-CC-wRF" customClass="TableViewController" customModule="DiscogsDatabase" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="PwX-Rl-ZKN">
+                        <rect key="frame" x="0.0" y="0.0" width="343" height="589"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="artistCellIdentifier" id="DPq-8w-c4o">
+                                <rect key="frame" x="0.0" y="28" width="343" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="artistCellIdentifier" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DPq-8w-c4o" id="HVJ-TJ-kNz">
+                                    <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="GVa-CC-wRF" id="ILR-vk-1GZ"/>
+                            <outlet property="delegate" destination="GVa-CC-wRF" id="6Zl-R9-qZB"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mz1-lR-TRU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="905" y="165"/>
         </scene>
     </scenes>
 </document>
