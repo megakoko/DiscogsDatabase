@@ -90,7 +90,7 @@ class TableViewController: UITableViewController, TableProtocol {
         
         if artist.thumbnailUrl != nil {
             if let imageData = try? Data(contentsOf: artist.thumbnailUrl!) {
-                cell.imageView!.image = UIImage(data: imageData)
+                cell.thumbnailView.image = UIImage(data: imageData)
             }
         }       
         

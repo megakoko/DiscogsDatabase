@@ -80,6 +80,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DA071B561FCC5E2A0060DBBC /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		DAB006CB1FC7E10100D667C1 = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +110,7 @@
 		DAB006D61FC7E10100D667C1 /* DiscogsDatabase */ = {
 			isa = PBXGroup;
 			children = (
+				DA071B561FCC5E2A0060DBBC /* Assets */,
 				DAB006D71FC7E10100D667C1 /* AppDelegate.swift */,
 				DAB006D91FC7E10100D667C1 /* ViewController.swift */,
 				DA071B4C1FCBECEB0060DBBC /* Artist.swift */,
