@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA071B4D1FCBECEB0060DBBC /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA071B4C1FCBECEB0060DBBC /* Artist.swift */; };
+		DA071B4F1FCBF1D80060DBBC /* ArtistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA071B4E1FCBF1D80060DBBC /* ArtistTableViewCell.swift */; };
 		DAB006D81FC7E10100D667C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB006D71FC7E10100D667C1 /* AppDelegate.swift */; };
 		DAB006DA1FC7E10100D667C1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB006D91FC7E10100D667C1 /* ViewController.swift */; };
 		DAB006DD1FC7E10100D667C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAB006DB1FC7E10100D667C1 /* Main.storyboard */; };
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DA071B4C1FCBECEB0060DBBC /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
+		DA071B4E1FCBF1D80060DBBC /* ArtistTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistTableViewCell.swift; sourceTree = "<group>"; };
 		DAB006D41FC7E10100D667C1 /* DiscogsDatabase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiscogsDatabase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAB006D71FC7E10100D667C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DAB006D91FC7E10100D667C1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +105,8 @@
 			children = (
 				DAB006D71FC7E10100D667C1 /* AppDelegate.swift */,
 				DAB006D91FC7E10100D667C1 /* ViewController.swift */,
+				DA071B4C1FCBECEB0060DBBC /* Artist.swift */,
+				DA071B4E1FCBF1D80060DBBC /* ArtistTableViewCell.swift */,
 				DAB007091FC8614000D667C1 /* TableViewController.swift */,
 				DAB006DB1FC7E10100D667C1 /* Main.storyboard */,
 				DAB006E01FC7E10100D667C1 /* LaunchScreen.storyboard */,
@@ -264,6 +270,8 @@
 			files = (
 				DAB006DA1FC7E10100D667C1 /* ViewController.swift in Sources */,
 				DAB0070A1FC8614000D667C1 /* TableViewController.swift in Sources */,
+				DA071B4F1FCBF1D80060DBBC /* ArtistTableViewCell.swift in Sources */,
+				DA071B4D1FCBECEB0060DBBC /* Artist.swift in Sources */,
 				DAB006D81FC7E10100D667C1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
