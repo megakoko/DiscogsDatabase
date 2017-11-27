@@ -13,7 +13,7 @@ protocol TableProtocol {
 }
 
 class TableViewController: UITableViewController, TableProtocol {
-    var artists = [String]()
+    var artists = [Artist]()
 
     func search(searchString: String) {
         artists.removeAll()
@@ -49,8 +49,10 @@ class TableViewController: UITableViewController, TableProtocol {
                     if let results = convertedJsonIntoDict["results"] as? [Any] {
                         for result in results {
                             if let resultObject = result as? [String: Any] {
+                                let thumbnailUrl = URL(string: resultObject["thumb"] as? String ?? "")
                                 let title = resultObject["title"] as? String
-                                self.artists += [title!]
+                                let url = URL(string: resultObject["resource_url"] as? String ?? "")
+                                self.artists += [Artist(thumbnailUrl: thumbnailUrl, title: title!, url: url)]
                             }
                         }
                     }
@@ -80,9 +82,17 @@ class TableViewController: UITableViewController, TableProtocol {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "artistCellIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "artistCellIdentifier", for: indexPath) as! ArtistTableViewCell
 
-        cell.textLabel?.text = artists[indexPath.row]
+        let artist = artists[indexPath.row]
+        
+        cell.nameLabel.text = artist.title
+        
+        if artist.thumbnailUrl != nil {
+            if let imageData = try? Data(contentsOf: artist.thumbnailUrl!) {
+                cell.imageView!.image = UIImage(data: imageData)
+            }
+        }       
         
         return cell
     }
