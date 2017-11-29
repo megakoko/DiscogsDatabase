@@ -80,7 +80,13 @@ class TableViewController: UITableViewController, TableProtocol {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "artistSegue") {
             let path = tableView.indexPathForSelectedRow
-            segue.destination.title = artists[path!.row].title
+            let artist = artists[path!.row]
+            segue.destination.title = artist.title
+            if artist.url != nil {
+                if let artistView = segue.destination as? ArtistViewController {
+                    artistView.setArtistUrl(artist.url!)
+                }
+            }
         }
     }
 

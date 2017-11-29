@@ -115,7 +115,7 @@
                                 <connections>
                                     <outlet property="nameLabel" destination="81h-X1-snd" id="bZm-kW-BHf"/>
                                     <outlet property="thumbnailView" destination="r5b-Ww-FDD" id="Gs5-uZ-Xx1"/>
-                                    <segue destination="UJK-p4-1r0" kind="show" identifier="artistSegue" id="qVc-pS-YtM"/>
+                                    <segue destination="zBc-vc-Uxi" kind="show" identifier="artistSegue" id="fr4-ac-mdt"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -129,34 +129,32 @@
             </objects>
             <point key="canvasLocation" x="920.79999999999995" y="133.5832083958021"/>
         </scene>
-        <!--Title-->
-        <scene sceneID="dAz-2B-wv9">
+        <!--Artist View Controller-->
+        <scene sceneID="Vdt-xj-ahW">
             <objects>
-                <viewController id="UJK-p4-1r0" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="I5L-ux-YLj">
+                <viewController id="zBc-vc-Uxi" customClass="ArtistViewController" customModule="DiscogsDatabase" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="P98-pn-Aeg">
                         <rect key="frame" x="0.0" y="0.0" width="343" height="529"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Some data on page 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oYn-CE-Sac">
-                                <rect key="frame" x="106" y="77" width="131" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Artist name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oYn-CE-Sac">
+                                <rect key="frame" x="29" y="34" width="131" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="zjH-3a-7HG" firstAttribute="trailing" secondItem="oYn-CE-Sac" secondAttribute="trailing" constant="106" id="byu-MX-FBB"/>
-                            <constraint firstItem="oYn-CE-Sac" firstAttribute="top" secondItem="zjH-3a-7HG" secondAttribute="top" constant="57" id="kFh-MS-bIn"/>
-                            <constraint firstItem="oYn-CE-Sac" firstAttribute="leading" secondItem="zjH-3a-7HG" secondAttribute="leading" constant="106" id="t0z-p2-Y72"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="zjH-3a-7HG"/>
+                        <viewLayoutGuide key="safeArea" id="WtX-sl-qUm"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="xK8-Lx-Gm7"/>
+                    <connections>
+                        <outlet property="artistNameLabel" destination="oYn-CE-Sac" id="oUL-H8-dEz"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qTh-EO-R8K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GOa-qO-wWC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1753" y="134"/>
+            <point key="canvasLocation" x="1769" y="134"/>
         </scene>
     </scenes>
     <resources>
