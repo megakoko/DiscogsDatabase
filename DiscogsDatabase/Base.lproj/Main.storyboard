@@ -28,7 +28,7 @@
             </objects>
             <point key="canvasLocation" x="-762" y="134"/>
         </scene>
-        <!--View Controller-->
+        <!--Search Database-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DiscogsDatabase" customModuleProvider="target" sceneMemberID="viewController">
@@ -64,7 +64,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="RDV-yd-EUa"/>
+                    <navigationItem key="navigationItem" title="Search Database" id="RDV-yd-EUa"/>
                     <connections>
                         <outlet property="searchField" destination="0mI-YI-Dlk" id="fsi-wE-LvS"/>
                         <outlet property="view" destination="8bC-Xf-vdC" id="iwj-io-3ld"/>
