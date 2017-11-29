@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct Artist {
+struct SearchItem {
     let thumbnailUrl: URL?
     let title: String
     let url: URL?

@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DA071B4D1FCBECEB0060DBBC /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA071B4C1FCBECEB0060DBBC /* Artist.swift */; };
-		DA071B4F1FCBF1D80060DBBC /* ArtistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA071B4E1FCBF1D80060DBBC /* ArtistTableViewCell.swift */; };
+		DA071B4D1FCBECEB0060DBBC /* SearchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA071B4C1FCBECEB0060DBBC /* SearchItem.swift */; };
+		DA071B4F1FCBF1D80060DBBC /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA071B4E1FCBF1D80060DBBC /* SearchTableViewCell.swift */; };
 		DA071B581FCEE0A30060DBBC /* ArtistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA071B571FCEE0A30060DBBC /* ArtistViewController.swift */; };
 		DAB006D81FC7E10100D667C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB006D71FC7E10100D667C1 /* AppDelegate.swift */; };
 		DAB006DA1FC7E10100D667C1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB006D91FC7E10100D667C1 /* ViewController.swift */; };
@@ -17,7 +17,7 @@
 		DAB006E21FC7E10100D667C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAB006E01FC7E10100D667C1 /* LaunchScreen.storyboard */; };
 		DAB006ED1FC7E10100D667C1 /* DiscogsDatabaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB006EC1FC7E10100D667C1 /* DiscogsDatabaseTests.swift */; };
 		DAB006F81FC7E10100D667C1 /* DiscogsDatabaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB006F71FC7E10100D667C1 /* DiscogsDatabaseUITests.swift */; };
-		DAB0070A1FC8614000D667C1 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB007091FC8614000D667C1 /* TableViewController.swift */; };
+		DAB0070A1FC8614000D667C1 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB007091FC8614000D667C1 /* SearchTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		DA071B4C1FCBECEB0060DBBC /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
-		DA071B4E1FCBF1D80060DBBC /* ArtistTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistTableViewCell.swift; sourceTree = "<group>"; };
+		DA071B4C1FCBECEB0060DBBC /* SearchItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItem.swift; sourceTree = "<group>"; };
+		DA071B4E1FCBF1D80060DBBC /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		DA071B571FCEE0A30060DBBC /* ArtistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistViewController.swift; sourceTree = "<group>"; };
 		DAB006D41FC7E10100D667C1 /* DiscogsDatabase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiscogsDatabase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAB006D71FC7E10100D667C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -54,7 +54,7 @@
 		DAB006F31FC7E10100D667C1 /* DiscogsDatabaseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DiscogsDatabaseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAB006F71FC7E10100D667C1 /* DiscogsDatabaseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscogsDatabaseUITests.swift; sourceTree = "<group>"; };
 		DAB006F91FC7E10100D667C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DAB007091FC8614000D667C1 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		DAB007091FC8614000D667C1 /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,9 +115,9 @@
 				DA071B561FCC5E2A0060DBBC /* Assets */,
 				DAB006D71FC7E10100D667C1 /* AppDelegate.swift */,
 				DAB006D91FC7E10100D667C1 /* ViewController.swift */,
-				DA071B4C1FCBECEB0060DBBC /* Artist.swift */,
-				DA071B4E1FCBF1D80060DBBC /* ArtistTableViewCell.swift */,
-				DAB007091FC8614000D667C1 /* TableViewController.swift */,
+				DA071B4C1FCBECEB0060DBBC /* SearchItem.swift */,
+				DA071B4E1FCBF1D80060DBBC /* SearchTableViewCell.swift */,
+				DAB007091FC8614000D667C1 /* SearchTableViewController.swift */,
 				DA071B571FCEE0A30060DBBC /* ArtistViewController.swift */,
 				DAB006DB1FC7E10100D667C1 /* Main.storyboard */,
 				DAB006E01FC7E10100D667C1 /* LaunchScreen.storyboard */,
@@ -280,9 +280,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAB006DA1FC7E10100D667C1 /* ViewController.swift in Sources */,
-				DAB0070A1FC8614000D667C1 /* TableViewController.swift in Sources */,
-				DA071B4F1FCBF1D80060DBBC /* ArtistTableViewCell.swift in Sources */,
-				DA071B4D1FCBECEB0060DBBC /* Artist.swift in Sources */,
+				DAB0070A1FC8614000D667C1 /* SearchTableViewController.swift in Sources */,
+				DA071B4F1FCBF1D80060DBBC /* SearchTableViewCell.swift in Sources */,
+				DA071B4D1FCBECEB0060DBBC /* SearchItem.swift in Sources */,
 				DA071B581FCEE0A30060DBBC /* ArtistViewController.swift in Sources */,
 				DAB006D81FC7E10100D667C1 /* AppDelegate.swift in Sources */,
 			);

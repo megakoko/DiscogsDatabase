@@ -12,8 +12,8 @@ protocol TableProtocol {
     func search(searchString: String)
 }
 
-class TableViewController: UITableViewController, TableProtocol {
-    var artists = [Artist]()
+class SearchTableViewController: UITableViewController, TableProtocol {
+    var artists = [SearchItem]()
 
     func search(searchString: String) {
         artists.removeAll()
@@ -52,7 +52,7 @@ class TableViewController: UITableViewController, TableProtocol {
                                 let thumbnailUrl = URL(string: resultObject["thumb"] as? String ?? "")
                                 let title = resultObject["title"] as? String
                                 let url = URL(string: resultObject["resource_url"] as? String ?? "")
-                                self.artists += [Artist(thumbnailUrl: thumbnailUrl, title: title!, url: url)]
+                                self.artists += [SearchItem(thumbnailUrl: thumbnailUrl, title: title!, url: url)]
                             }
                         }
                     }
@@ -95,7 +95,7 @@ class TableViewController: UITableViewController, TableProtocol {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "artistCellIdentifier", for: indexPath) as! ArtistTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "artistCellIdentifier", for: indexPath) as! SearchTableViewCell
 
         let artist = artists[indexPath.row]
         

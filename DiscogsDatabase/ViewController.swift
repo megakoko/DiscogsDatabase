@@ -19,7 +19,7 @@ class ViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "embeddedArtistTableViewSegue") {
-            let embeddedController = segue.destination as! TableViewController
+            let embeddedController = segue.destination as! SearchTableViewController
             tableDelegate = embeddedController
         }
     }
