@@ -76,6 +76,13 @@ class TableViewController: UITableViewController, TableProtocol {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "artistSegue") {
+            let path = tableView.indexPathForSelectedRow
+            segue.destination.title = artists[path!.row].title
+        }
+    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return artists.count
