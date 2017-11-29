@@ -2,8 +2,8 @@
 //  ArtistTableViewCell.swift
 //  DiscogsDatabase
 //
-//  Created by Andy on 27/11/2017.
-//  Copyright © 2017 Andy. All rights reserved.
+//  Created by Andy Chukavin on 27/11/2017.
+//  Copyright © 2017 Andy Chukavin. All rights reserved.
 //
 
 import UIKit
