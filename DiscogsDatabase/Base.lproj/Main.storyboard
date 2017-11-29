@@ -42,44 +42,31 @@
                                     <segue destination="GVa-CC-wRF" kind="embed" identifier="embeddedArtistTableViewSegue" id="aQ7-yE-pma"/>
                                 </connections>
                             </containerView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="iQr-Tm-n3v">
-                                <rect key="frame" x="10" y="78" width="355" height="30"/>
-                                <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="0mI-YI-Dlk">
-                                        <rect key="frame" x="0.0" y="0.0" width="297" height="30"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
-                                        <connections>
-                                            <action selector="fetchData:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="Idk-b1-fT2"/>
-                                            <action selector="fetchData:" destination="BYZ-38-t0r" eventType="valueChanged" id="XN6-ai-q3m"/>
-                                        </connections>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zQn-Aj-awb">
-                                        <rect key="frame" x="307" y="0.0" width="48" height="30"/>
-                                        <state key="normal" title="Search"/>
-                                        <connections>
-                                            <action selector="fetchData2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9UX-58-uT6"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="0mI-YI-Dlk">
+                                <rect key="frame" x="16" y="80" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="editingChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="rf2-j1-gUY"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="0mI-YI-Dlk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="3Zt-DJ-9xC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0mI-YI-Dlk" secondAttribute="trailing" constant="16" id="3lA-vg-bIR"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nZ7-Tp-Hy8" secondAttribute="trailing" constant="16" id="CCW-z0-L9g"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iQr-Tm-n3v" secondAttribute="trailing" constant="10" id="Cdx-3W-oze"/>
                             <constraint firstItem="nZ7-Tp-Hy8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="DIB-O2-djX"/>
-                            <constraint firstItem="iQr-Tm-n3v" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="14" id="Gk3-cC-bkL"/>
-                            <constraint firstItem="nZ7-Tp-Hy8" firstAttribute="top" secondItem="iQr-Tm-n3v" secondAttribute="bottom" constant="10" id="S7o-Pw-Ofj"/>
+                            <constraint firstItem="nZ7-Tp-Hy8" firstAttribute="top" secondItem="0mI-YI-Dlk" secondAttribute="bottom" constant="8" id="PMj-N2-skE"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="nZ7-Tp-Hy8" secondAttribute="bottom" constant="20" id="Tl5-R2-bEE"/>
-                            <constraint firstItem="iQr-Tm-n3v" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="XrK-g9-wh2"/>
+                            <constraint firstItem="0mI-YI-Dlk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="Vyb-IQ-DJE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="RDV-yd-EUa"/>
                     <connections>
-                        <outlet property="searchField" destination="0mI-YI-Dlk" id="rZt-q0-ndx"/>
+                        <outlet property="searchField" destination="0mI-YI-Dlk" id="fsi-wE-LvS"/>
                         <outlet property="view" destination="8bC-Xf-vdC" id="iwj-io-3ld"/>
                     </connections>
                 </viewController>

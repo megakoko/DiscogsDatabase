@@ -9,10 +9,14 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet weak var searchField: UITextField!
+
     private var tableDelegate: TableProtocol?
     
-    @IBOutlet weak var searchField: UITextField!
+    private var timer: Timer? = nil
     
+    private var searchDelay = 0.3
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "embeddedArtistTableViewSegue") {
             let embeddedController = segue.destination as! TableViewController
@@ -28,13 +32,18 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
 
-    @IBAction func fetchData2(_ sender: Any) {
+    @IBAction func editingChanged(_ sender: Any) {
+        if timer != nil {
+            timer!.invalidate()
+        }
+        
+        timer = Timer.scheduledTimer(timeInterval: searchDelay, target: self, selector: #selector(self.search), userInfo: nil, repeats: false)
+    }
+    
+    @objc private func search() {
+        timer = nil
         if tableDelegate != nil {
             tableDelegate?.search(searchString: searchField.text!)
         }
-    }
-    
-    @IBAction func fetchData(_ sender: UITextField) {
-        print("ad")
     }
 }
