@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DOy-Nb-PME">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -29,17 +33,17 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DiscogsDatabase" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nZ7-Tp-Hy8">
-                                <rect key="frame" x="16" y="118" width="568" height="462"/>
+                                <rect key="frame" x="16" y="118" width="343" height="529"/>
                                 <connections>
                                     <segue destination="GVa-CC-wRF" kind="embed" identifier="embeddedArtistTableViewSegue" id="aQ7-yE-pma"/>
                                 </connections>
                             </containerView>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="0mI-YI-Dlk">
-                                <rect key="frame" x="16" y="80" width="568" height="30"/>
+                                <rect key="frame" x="16" y="80" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
@@ -133,24 +137,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="343" height="529"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Artist name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oYn-CE-Sac">
-                                <rect key="frame" x="29" y="34" width="131" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oYn-CE-Sac">
+                                <rect key="frame" x="16" y="30" width="311" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="111111 22222 33333 44444 55555 66666 77777 8888" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Rf-nX-gvX">
+                                <rect key="frame" x="16" y="59" width="311" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="oYn-CE-Sac" firstAttribute="leading" secondItem="WtX-sl-qUm" secondAttribute="leading" constant="16" id="36P-na-NJF"/>
+                            <constraint firstItem="WtX-sl-qUm" firstAttribute="trailing" secondItem="0Rf-nX-gvX" secondAttribute="trailing" constant="16" id="bsf-LR-t0e"/>
+                            <constraint firstItem="0Rf-nX-gvX" firstAttribute="top" secondItem="oYn-CE-Sac" secondAttribute="bottom" constant="8" id="cQr-e2-qPo"/>
+                            <constraint firstItem="oYn-CE-Sac" firstAttribute="top" secondItem="WtX-sl-qUm" secondAttribute="top" constant="10" id="d15-IA-D3O"/>
+                            <constraint firstItem="0Rf-nX-gvX" firstAttribute="leading" secondItem="WtX-sl-qUm" secondAttribute="leading" constant="16" id="eMy-OE-FEx"/>
+                            <constraint firstItem="WtX-sl-qUm" firstAttribute="trailing" secondItem="oYn-CE-Sac" secondAttribute="trailing" constant="16" id="eZQ-uA-XQB"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="WtX-sl-qUm"/>
                     </view>
                     <connections>
                         <outlet property="artistNameLabel" destination="oYn-CE-Sac" id="oUL-H8-dEz"/>
+                        <outlet property="artistProfileLabel" destination="0Rf-nX-gvX" id="0FZ-Cz-KGJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GOa-qO-wWC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1769" y="134"/>
+            <point key="canvasLocation" x="1768.8" y="133.5832083958021"/>
         </scene>
     </scenes>
     <resources>

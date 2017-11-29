@@ -25,8 +25,7 @@ class SearchTableViewController: UITableViewController, TableProtocol {
         }
         
         var request = URLRequest(url: urlComponents!.url!)
-        request.httpMethod = "GET"
-        
+
         let key = ProcessInfo.processInfo.environment["DiscogsKey"] ?? ""
         let secret = ProcessInfo.processInfo.environment["DiscogsSecret"] ?? ""
         
@@ -45,8 +44,8 @@ class SearchTableViewController: UITableViewController, TableProtocol {
             }
             
             do {
-                if let convertedJsonIntoDict = try JSONSerialization.jsonObject(with: data!, options: []) as? NSDictionary {
-                    if let results = convertedJsonIntoDict["results"] as? [Any] {
+                if let json = try JSONSerialization.jsonObject(with: data!, options: []) as? NSDictionary {
+                    if let results = json["results"] as? [Any] {
                         for result in results {
                             if let resultObject = result as? [String: Any] {
                                 let thumbnailUrl = URL(string: resultObject["thumb"] as? String ?? "")
