@@ -95,11 +95,13 @@ class TableViewController: UITableViewController, TableProtocol {
         
         cell.nameLabel.text = artist.title
         
+        var thumbnail: UIImage? = nil
         if artist.thumbnailUrl != nil {
             if let imageData = try? Data(contentsOf: artist.thumbnailUrl!) {
-                cell.thumbnailView.image = UIImage(data: imageData)
+                thumbnail = UIImage(data: imageData)
             }
-        }       
+        }
+        cell.thumbnailView.image = thumbnail ?? UIImage(named: "no_image")
         
         return cell
     }
