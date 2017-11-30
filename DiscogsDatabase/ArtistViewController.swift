@@ -51,7 +51,6 @@ class ArtistViewController: UIViewController, UITableViewDataSource {
                         self.artistNameLabel.text = name ?? ""
                         self.artistProfileLabel.text = profile ?? ""
                     }
-
                 }
             } catch let error as NSError {
                 print(error.localizedDescription)
@@ -72,7 +71,6 @@ class ArtistViewController: UIViewController, UITableViewDataSource {
         let query = URLQueryItem(name: "page", value: "\(page)")
         urlComponents!.queryItems = [query]
 
-        print(urlComponents!.url!)
         let releasesRequest = URLRequest(url: urlComponents!.url!)
         let task = URLSession.shared.dataTask(with: releasesRequest) {
             data, response, error in
@@ -86,17 +84,15 @@ class ArtistViewController: UIViewController, UITableViewDataSource {
 
             do {
                 if let json = try JSONSerialization.jsonObject(with: data!, options: []) as? NSDictionary {
-                    if let releases = json["releases"] as? [Any] {
+                    if let releases = json["releases"] as? [[String:Any]] {
                         for release in releases {
-                            if let releaseObject = release as? [String: Any] {
-                                let artistRelease = ArtistRelease(artist: releaseObject["artist"] as? String,
-                                                                  type: releaseObject["type"] as? String,
-                                                                  title: releaseObject["title"] as? String,
-                                                                  year: releaseObject["year"] as? Int,
-                                                                  thumbnailUrl: URL(string: releaseObject["thumb"] as? String ?? ""),
-                                                                  url: URL(string: releaseObject["resource_url"] as? String ?? ""))
-                                self.artistReleases += [artistRelease]
-                            }
+                            let artistRelease = ArtistRelease(artist: release["artist"] as? String,
+                                                              type: release["type"] as? String,
+                                                              title: release["title"] as? String,
+                                                              year: release["year"] as? Int,
+                                                              thumbnailUrl: URL(string: release["thumb"] as? String ?? ""),
+                                                              url: URL(string: release["resource_url"] as? String ?? ""))
+                            self.artistReleases += [artistRelease]
                         }
                     }
                 }

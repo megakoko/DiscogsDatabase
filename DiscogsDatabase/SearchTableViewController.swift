@@ -45,14 +45,12 @@ class SearchTableViewController: UITableViewController, TableProtocol {
             
             do {
                 if let json = try JSONSerialization.jsonObject(with: data!, options: []) as? NSDictionary {
-                    if let results = json["results"] as? [Any] {
+                    if let results = json["results"] as? [[String: Any]] {
                         for result in results {
-                            if let resultObject = result as? [String: Any] {
-                                let thumbnailUrl = URL(string: resultObject["thumb"] as? String ?? "")
-                                let title = resultObject["title"] as? String
-                                let url = URL(string: resultObject["resource_url"] as? String ?? "")
-                                self.artists += [SearchItem(thumbnailUrl: thumbnailUrl, title: title!, url: url)]
-                            }
+                            let searchItem = SearchItem(thumbnailUrl: URL(string: result["thumb"] as? String ?? ""),
+                                                        title: result["title"] as? String ?? "",
+                                                        url: URL(string: result["resource_url"] as? String ?? ""))
+                            self.artists += [searchItem]
                         }
                     }
                 }
