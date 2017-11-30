@@ -8,9 +8,10 @@
 
 import UIKit
 
-class ArtistViewController: UIViewController {
+class ArtistViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var artistNameLabel: UILabel!
     @IBOutlet weak var artistProfileLabel: UILabel!
+    @IBOutlet weak var tableView: UITableView!
 
     private var artistUrl: URL? = nil
 
@@ -102,6 +103,10 @@ class ArtistViewController: UIViewController {
             } catch let error as NSError {
                 print(error.localizedDescription)
             }
+
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         }
 
         task.resume()
@@ -117,7 +122,21 @@ class ArtistViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return artistReleases.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "artistReleaseCellIdentifier", for: indexPath)
+
+        let artistRelease = artistReleases[indexPath.row]
+
+        cell.textLabel?.text = artistRelease.title
+
+        return cell
+
+    }
 
     /*
     // MARK: - Navigation
