@@ -16,8 +16,6 @@ class SearchTableViewController: UITableViewController, TableProtocol {
     var artists = [SearchItem]()
     var thumbnailDownloads = [Int: URLSessionDataTask]()
 
-    var test = [Int: Int]()
-
     func clearData() {
         artists.removeAll()
         for task in thumbnailDownloads.values {
@@ -28,7 +26,7 @@ class SearchTableViewController: UITableViewController, TableProtocol {
 
     func search(searchString: String) {
         clearData()
-        
+
         var urlComponents = URLComponents(string: "https://api.discogs.com/database/search?type=artist")
         if urlComponents != nil {
             let query = URLQueryItem(name: "q", value: searchString)
