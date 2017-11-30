@@ -14,9 +14,24 @@ class ArtistViewController: UIViewController {
 
     private var artistUrl: URL? = nil
 
+    private var artistReleases = [ArtistRelease]()
+
+    private var lastReleasesPage: Int? = nil
+
     func setArtistUrl(_ url: URL) {
         artistUrl = url
 
+        clearData()
+        downloadArtistInfo()
+        downloadReleases(onPage: 1)
+    }
+
+    private func clearData() {
+        artistReleases.removeAll()
+        lastReleasesPage = nil
+    }
+
+    private func downloadArtistInfo() {
         let request = URLRequest(url: artistUrl!)
 
         let task = URLSession.shared.dataTask(with: request) {
@@ -36,6 +51,53 @@ class ArtistViewController: UIViewController {
                         self.artistProfileLabel.text = profile ?? ""
                     }
 
+                }
+            } catch let error as NSError {
+                print(error.localizedDescription)
+            }
+        }
+
+        task.resume()
+    }
+
+    private func downloadReleases(onPage page: Int) {
+        var urlComponents = URLComponents(url: artistUrl!, resolvingAgainstBaseURL: false)
+        if urlComponents == nil {
+            return
+        }
+
+        urlComponents!.path += "/releases"
+
+        let query = URLQueryItem(name: "page", value: "\(page)")
+        urlComponents!.queryItems = [query]
+
+        print(urlComponents!.url!)
+        let releasesRequest = URLRequest(url: urlComponents!.url!)
+        let task = URLSession.shared.dataTask(with: releasesRequest) {
+            data, response, error in
+
+            if error != nil {
+                print("Failed to fetch artist's releases")
+                return
+            }
+
+            self.lastReleasesPage = page
+
+            do {
+                if let json = try JSONSerialization.jsonObject(with: data!, options: []) as? NSDictionary {
+                    if let releases = json["releases"] as? [Any] {
+                        for release in releases {
+                            if let releaseObject = release as? [String: Any] {
+                                let artistRelease = ArtistRelease(artist: releaseObject["artist"] as? String,
+                                                                  type: releaseObject["type"] as? String,
+                                                                  title: releaseObject["title"] as? String,
+                                                                  year: releaseObject["year"] as? Int,
+                                                                  thumbnailUrl: URL(string: releaseObject["thumb"] as? String ?? ""),
+                                                                  url: URL(string: releaseObject["resource_url"] as? String ?? ""))
+                                self.artistReleases += [artistRelease]
+                            }
+                        }
+                    }
                 }
             } catch let error as NSError {
                 print(error.localizedDescription)
