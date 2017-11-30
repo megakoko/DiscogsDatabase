@@ -46,7 +46,12 @@ class ArtistViewController: UIViewController, UITableViewDataSource {
             do {
                 if let json = try JSONSerialization.jsonObject(with: data!, options: []) as? NSDictionary {
                     let name = json["name"] as? String
-                    let profile = json["profile"] as? String
+                    var profile = json["profile"] as? String
+
+                    if profile != nil {
+                        profile = profile?.trimmingCharacters(in: .whitespacesAndNewlines)
+                    }
+
                     DispatchQueue.main.async {
                         self.artistNameLabel.text = name ?? ""
                         self.artistProfileLabel.text = profile ?? ""
