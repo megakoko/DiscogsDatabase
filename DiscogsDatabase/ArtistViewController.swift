@@ -67,9 +67,7 @@ class ArtistViewController: UIViewController, UITableViewDataSource {
         }
 
         urlComponents!.path += "/releases"
-
-        let query = URLQueryItem(name: "page", value: "\(page)")
-        urlComponents!.queryItems = [query]
+        urlComponents!.queryItems = [URLQueryItem(name: "page", value: "\(page)")]
 
         let releasesRequest = URLRequest(url: urlComponents!.url!)
         let task = URLSession.shared.dataTask(with: releasesRequest) {

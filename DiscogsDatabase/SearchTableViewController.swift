@@ -29,8 +29,8 @@ class SearchTableViewController: UITableViewController, TableProtocol {
 
         var urlComponents = URLComponents(string: "https://api.discogs.com/database/search?type=artist")
         if urlComponents != nil {
-            let query = URLQueryItem(name: "q", value: searchString)
-            urlComponents!.queryItems = [query]
+            urlComponents!.queryItems = [URLQueryItem(name: "q", value: searchString),
+                                         URLQueryItem(name: "type", value: "artist")]
         }
         
         var request = URLRequest(url: urlComponents!.url!)
