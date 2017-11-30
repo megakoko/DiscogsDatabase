@@ -10,6 +10,7 @@ import UIKit
 
 struct SearchItem {
     let thumbnailUrl: URL?
+    var thumbnailImage: UIImage?
     let title: String
     let url: URL?
 }

@@ -14,9 +14,20 @@ protocol TableProtocol {
 
 class SearchTableViewController: UITableViewController, TableProtocol {
     var artists = [SearchItem]()
+    var thumbnailDownloads = [Int: URLSessionDataTask]()
+
+    var test = [Int: Int]()
+
+    func clearData() {
+        artists.removeAll()
+        for task in thumbnailDownloads.values {
+            task.cancel()
+        }
+        thumbnailDownloads.removeAll()
+    }
 
     func search(searchString: String) {
-        artists.removeAll()
+        clearData()
         
         var urlComponents = URLComponents(string: "https://api.discogs.com/database/search?type=artist")
         if urlComponents != nil {
@@ -39,15 +50,16 @@ class SearchTableViewController: UITableViewController, TableProtocol {
             data, response, error in
             
             if error != nil {
-                print("error=\(error!)")
+                print("Failed to perform search. Error=\(error!)")
                 return
             }
-            
+
             do {
                 if let json = try JSONSerialization.jsonObject(with: data!, options: []) as? NSDictionary {
                     if let results = json["results"] as? [[String: Any]] {
                         for result in results {
                             let searchItem = SearchItem(thumbnailUrl: URL(string: result["thumb"] as? String ?? ""),
+                                                        thumbnailImage: nil,
                                                         title: result["title"] as? String ?? "",
                                                         url: URL(string: result["resource_url"] as? String ?? ""))
                             self.artists += [searchItem]
@@ -93,19 +105,37 @@ class SearchTableViewController: UITableViewController, TableProtocol {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "artistCellIdentifier", for: indexPath) as! SearchTableViewCell
+        let row = indexPath.row
+        let artist = artists[row]
 
-        let artist = artists[indexPath.row]
-        
         cell.nameLabel.text = artist.title
-        
-        var thumbnail: UIImage? = nil
-        if artist.thumbnailUrl != nil {
-            if let imageData = try? Data(contentsOf: artist.thumbnailUrl!) {
-                thumbnail = UIImage(data: imageData)
+        cell.thumbnailView.image = artist.thumbnailImage ?? UIImage(named: "no_image")
+
+        if artist.thumbnailImage == nil && artist.thumbnailUrl != nil {
+            let request = URLRequest(url: artist.thumbnailUrl!)
+            let task = URLSession.shared.dataTask(with: request) {
+                data, response, error in
+
+                if error != nil {
+                    print("Failed to download artist thumbnail. Error: \(error!)")
+                    return
+                }
+
+                self.thumbnailDownloads[row] = nil
+
+                if let thumbnail = UIImage(data: data!) {
+                    self.artists[row].thumbnailImage = thumbnail
+                    DispatchQueue.main.async {
+                        cell.thumbnailView.image = thumbnail
+                    }
+                }
             }
+
+            thumbnailDownloads[row] = task
+
+            task.resume()
         }
-        cell.thumbnailView.image = thumbnail ?? UIImage(named: "no_image")
-        
+
         return cell
     }
 }
