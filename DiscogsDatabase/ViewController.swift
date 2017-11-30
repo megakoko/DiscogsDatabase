@@ -26,6 +26,11 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        if let defaultSearchText = ProcessInfo.processInfo.environment["DefaultSearchText"] {
+            searchField.text = defaultSearchText
+            search()
+        }
     }
 
     override func didReceiveMemoryWarning() {
