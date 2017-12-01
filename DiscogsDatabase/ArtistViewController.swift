@@ -117,6 +117,20 @@ class ArtistViewController: UIViewController, UITableViewDataSource {
         artistProfileLabel.text = nil
     }
 
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+
+        // Update table's header size to fit artist's description
+        if let headerView = tableView.tableHeaderView {
+            let size = headerView.systemLayoutSizeFitting(UILayoutFittingCompressedSize)
+            if headerView.frame.size != size {
+                headerView.frame.size = size
+                tableView.tableHeaderView = headerView
+                tableView.layoutIfNeeded()
+            }
+        }
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

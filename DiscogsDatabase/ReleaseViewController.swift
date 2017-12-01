@@ -111,6 +111,20 @@ class ReleaseViewController: UIViewController, UITableViewDataSource {
         // Do any additional setup after loading the view.
     }
 
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+
+        // Update table's header size to fit artist's description
+        if let headerView = tableView.tableHeaderView {
+            let size = headerView.systemLayoutSizeFitting(UILayoutFittingCompressedSize)
+            if headerView.frame.size != size {
+                headerView.frame.size = size
+                tableView.tableHeaderView = headerView
+                tableView.layoutIfNeeded()
+            }
+        }
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
