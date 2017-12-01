@@ -9,7 +9,8 @@
 import UIKit
 
 class ReleaseViewController: UIViewController, UITableViewDataSource {
-    @IBOutlet weak var artistAndTitleLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var artistLabel: UILabel!
     @IBOutlet weak var genreLabel: UILabel!
     @IBOutlet weak var yearLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
@@ -35,6 +36,32 @@ class ReleaseViewController: UIViewController, UITableViewDataSource {
 
             do {
                 if let json = try JSONSerialization.jsonObject(with: data!, options: []) as? NSDictionary {
+                    let title = json["title"] as? String
+                    let year = json["year"] as? Int
+                    let genres = json["genres"] as? [String]
+
+                    var releaseArtistNames = [String]()
+                    if let releaseArtists = json["artists"] as? [[String:Any]] {
+                        for releaseArtist in releaseArtists {
+                            if let name = releaseArtist["name"] as? String {
+                                releaseArtistNames += [name]
+                            }
+                        }
+                    }
+
+                    DispatchQueue.main.async {
+                        self.titleLabel.text = title
+                        if !releaseArtistNames.isEmpty {
+                            self.artistLabel.text = "by " + releaseArtistNames.joined(separator: ", ")
+                        }
+                        if year != nil {
+                            self.yearLabel.text = "\(year!)"
+                        }
+                        if genres != nil {
+                            self.genreLabel.text = genres!.joined(separator: ", ")
+                        }
+                    }
+
                     if let tracklist = json["tracklist"] as? [[String:Any]] {
                         for item in tracklist {
                             let type = item["type_"] as? String

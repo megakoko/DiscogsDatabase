@@ -204,19 +204,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Genre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="omn-2r-Zqm">
-                                <rect key="frame" x="16" y="59" width="343" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Year" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NId-in-faw">
                                 <rect key="frame" x="16" y="88" width="343" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bv1-Wq-g04">
-                                <rect key="frame" x="0.0" y="117" width="375" height="432"/>
+                                <rect key="frame" x="0.0" y="146" width="375" height="403"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="releaseCellIdentifier" id="pzU-rI-umg">
@@ -232,35 +226,51 @@
                                     <outlet property="dataSource" destination="EeM-rH-Lqj" id="vVK-Ed-Cq8"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Release artist and title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M4b-Hi-JWU">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M4b-Hi-JWU">
+                                <rect key="frame" x="16" y="59" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x5b-lh-M3G">
                                 <rect key="frame" x="16" y="30" width="343" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Year" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NId-in-faw">
+                                <rect key="frame" x="16" y="117" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="bv1-Wq-g04" firstAttribute="top" secondItem="NId-in-faw" secondAttribute="bottom" constant="8" id="0fQ-oW-bxP"/>
-                            <constraint firstItem="bv1-Wq-g04" firstAttribute="leading" secondItem="CWx-6g-jPh" secondAttribute="leading" id="33j-Zm-nn5"/>
-                            <constraint firstItem="omn-2r-Zqm" firstAttribute="top" secondItem="M4b-Hi-JWU" secondAttribute="bottom" constant="8" id="9Ni-kc-U8a"/>
-                            <constraint firstItem="omn-2r-Zqm" firstAttribute="leading" secondItem="CWx-6g-jPh" secondAttribute="leading" constant="16" id="Cb2-dH-06I"/>
-                            <constraint firstItem="CWx-6g-jPh" firstAttribute="trailing" secondItem="omn-2r-Zqm" secondAttribute="trailing" constant="16" id="GEt-8f-ZZq"/>
-                            <constraint firstItem="CWx-6g-jPh" firstAttribute="trailing" secondItem="bv1-Wq-g04" secondAttribute="trailing" id="Xzl-sZ-OiS"/>
-                            <constraint firstItem="M4b-Hi-JWU" firstAttribute="leading" secondItem="CWx-6g-jPh" secondAttribute="leading" constant="16" id="c6E-gD-hrn"/>
-                            <constraint firstItem="M4b-Hi-JWU" firstAttribute="top" secondItem="CWx-6g-jPh" secondAttribute="top" constant="10" id="fmM-5z-NGM"/>
-                            <constraint firstItem="NId-in-faw" firstAttribute="top" secondItem="omn-2r-Zqm" secondAttribute="bottom" constant="8" id="gyG-Ug-xeW"/>
-                            <constraint firstItem="CWx-6g-jPh" firstAttribute="trailing" secondItem="M4b-Hi-JWU" secondAttribute="trailing" constant="16" id="loz-zj-DBV"/>
-                            <constraint firstItem="NId-in-faw" firstAttribute="leading" secondItem="CWx-6g-jPh" secondAttribute="leading" constant="16" id="mMo-Vf-Jfb"/>
-                            <constraint firstItem="CWx-6g-jPh" firstAttribute="bottom" secondItem="bv1-Wq-g04" secondAttribute="bottom" id="qCB-DF-b4e"/>
-                            <constraint firstItem="CWx-6g-jPh" firstAttribute="trailing" secondItem="NId-in-faw" secondAttribute="trailing" constant="16" id="qg8-4j-oDq"/>
+                            <constraint firstItem="bv1-Wq-g04" firstAttribute="leading" secondItem="CWx-6g-jPh" secondAttribute="leading" id="72l-Qv-Xci"/>
+                            <constraint firstItem="CWx-6g-jPh" firstAttribute="trailing" secondItem="omn-2r-Zqm" secondAttribute="trailing" constant="16" id="9Jf-2S-R8o"/>
+                            <constraint firstItem="omn-2r-Zqm" firstAttribute="leading" secondItem="CWx-6g-jPh" secondAttribute="leading" constant="16" id="BkK-JZ-6Wb"/>
+                            <constraint firstItem="bv1-Wq-g04" firstAttribute="bottom" secondItem="CWx-6g-jPh" secondAttribute="bottom" id="KZM-qU-2zS"/>
+                            <constraint firstItem="CWx-6g-jPh" firstAttribute="trailing" secondItem="M4b-Hi-JWU" secondAttribute="trailing" constant="16" id="RhP-k6-PGR"/>
+                            <constraint firstItem="NId-in-faw" firstAttribute="top" secondItem="omn-2r-Zqm" secondAttribute="bottom" constant="8" id="ShR-LV-S5L"/>
+                            <constraint firstItem="x5b-lh-M3G" firstAttribute="leading" secondItem="CWx-6g-jPh" secondAttribute="leading" constant="16" id="aYE-IM-QST"/>
+                            <constraint firstItem="CWx-6g-jPh" firstAttribute="trailing" secondItem="x5b-lh-M3G" secondAttribute="trailing" constant="16" id="cNI-VV-oio"/>
+                            <constraint firstItem="M4b-Hi-JWU" firstAttribute="top" secondItem="x5b-lh-M3G" secondAttribute="bottom" constant="8" id="nrf-0f-9Vm"/>
+                            <constraint firstItem="bv1-Wq-g04" firstAttribute="top" secondItem="NId-in-faw" secondAttribute="bottom" constant="8" id="qmO-j8-s2q"/>
+                            <constraint firstItem="omn-2r-Zqm" firstAttribute="top" secondItem="M4b-Hi-JWU" secondAttribute="bottom" constant="8" id="v88-df-VYY"/>
+                            <constraint firstItem="NId-in-faw" firstAttribute="leading" secondItem="CWx-6g-jPh" secondAttribute="leading" constant="16" id="vpo-4A-j3t"/>
+                            <constraint firstItem="M4b-Hi-JWU" firstAttribute="leading" secondItem="CWx-6g-jPh" secondAttribute="leading" constant="16" id="w8l-z3-sqn"/>
+                            <constraint firstItem="x5b-lh-M3G" firstAttribute="top" secondItem="CWx-6g-jPh" secondAttribute="top" constant="10" id="wW8-OE-ung"/>
+                            <constraint firstItem="CWx-6g-jPh" firstAttribute="trailing" secondItem="NId-in-faw" secondAttribute="trailing" constant="16" id="xXm-vM-vet"/>
+                            <constraint firstItem="bv1-Wq-g04" firstAttribute="trailing" secondItem="CWx-6g-jPh" secondAttribute="trailing" id="yfd-c1-Sao"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="CWx-6g-jPh"/>
                     </view>
                     <connections>
-                        <outlet property="artistAndTitleLabel" destination="M4b-Hi-JWU" id="eYS-0L-rkL"/>
+                        <outlet property="artistLabel" destination="M4b-Hi-JWU" id="Qel-bc-MIh"/>
                         <outlet property="genreLabel" destination="omn-2r-Zqm" id="tGU-CR-0wD"/>
                         <outlet property="tableView" destination="bv1-Wq-g04" id="67R-Qs-VPX"/>
+                        <outlet property="titleLabel" destination="x5b-lh-M3G" id="f16-Nw-RSe"/>
                         <outlet property="yearLabel" destination="NId-in-faw" id="rlV-Qr-VBW"/>
                     </connections>
                 </viewController>
