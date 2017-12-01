@@ -7,21 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DA071B4D1FCBECEB0060DBBC /* SearchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA071B4C1FCBECEB0060DBBC /* SearchItem.swift */; };
-		DA071B4F1FCBF1D80060DBBC /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA071B4E1FCBF1D80060DBBC /* SearchTableViewCell.swift */; };
+		DA071B4D1FCBECEB0060DBBC /* DatabaseSearchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA071B4C1FCBECEB0060DBBC /* DatabaseSearchItem.swift */; };
+		DA071B4F1FCBF1D80060DBBC /* DatabaseSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA071B4E1FCBF1D80060DBBC /* DatabaseSearchCell.swift */; };
 		DA071B581FCEE0A30060DBBC /* ArtistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA071B571FCEE0A30060DBBC /* ArtistViewController.swift */; };
 		DA07EB9A1FD01E7300B0B0A3 /* ArtistRelease.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA07EB991FD01E7300B0B0A3 /* ArtistRelease.swift */; };
 		DA07EB9C1FD11EFD00B0B0A3 /* ReleaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA07EB9B1FD11EFD00B0B0A3 /* ReleaseViewController.swift */; };
 		DA07EB9E1FD1462B00B0B0A3 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA07EB9D1FD1462B00B0B0A3 /* Track.swift */; };
 		DA07EBA01FD1463F00B0B0A3 /* TrackCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA07EB9F1FD1463F00B0B0A3 /* TrackCollection.swift */; };
 		DAB006D81FC7E10100D667C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB006D71FC7E10100D667C1 /* AppDelegate.swift */; };
-		DAB006DA1FC7E10100D667C1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB006D91FC7E10100D667C1 /* ViewController.swift */; };
+		DAB006DA1FC7E10100D667C1 /* DatabaseSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB006D91FC7E10100D667C1 /* DatabaseSearchController.swift */; };
 		DAB006DD1FC7E10100D667C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAB006DB1FC7E10100D667C1 /* Main.storyboard */; };
 		DAB006DF1FC7E10100D667C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAB006DE1FC7E10100D667C1 /* Assets.xcassets */; };
 		DAB006E21FC7E10100D667C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAB006E01FC7E10100D667C1 /* LaunchScreen.storyboard */; };
 		DAB006ED1FC7E10100D667C1 /* DiscogsDatabaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB006EC1FC7E10100D667C1 /* DiscogsDatabaseTests.swift */; };
 		DAB006F81FC7E10100D667C1 /* DiscogsDatabaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB006F71FC7E10100D667C1 /* DiscogsDatabaseUITests.swift */; };
-		DAB0070A1FC8614000D667C1 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB007091FC8614000D667C1 /* SearchTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,8 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		DA071B4C1FCBECEB0060DBBC /* SearchItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItem.swift; sourceTree = "<group>"; };
-		DA071B4E1FCBF1D80060DBBC /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		DA071B4C1FCBECEB0060DBBC /* DatabaseSearchItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseSearchItem.swift; sourceTree = "<group>"; };
+		DA071B4E1FCBF1D80060DBBC /* DatabaseSearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseSearchCell.swift; sourceTree = "<group>"; };
 		DA071B571FCEE0A30060DBBC /* ArtistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistViewController.swift; sourceTree = "<group>"; };
 		DA07EB991FD01E7300B0B0A3 /* ArtistRelease.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistRelease.swift; sourceTree = "<group>"; };
 		DA07EB9B1FD11EFD00B0B0A3 /* ReleaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleaseViewController.swift; sourceTree = "<group>"; };
@@ -51,7 +50,7 @@
 		DA07EB9F1FD1463F00B0B0A3 /* TrackCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCollection.swift; sourceTree = "<group>"; };
 		DAB006D41FC7E10100D667C1 /* DiscogsDatabase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiscogsDatabase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAB006D71FC7E10100D667C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DAB006D91FC7E10100D667C1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DAB006D91FC7E10100D667C1 /* DatabaseSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseSearchController.swift; sourceTree = "<group>"; };
 		DAB006DC1FC7E10100D667C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DAB006DE1FC7E10100D667C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DAB006E11FC7E10100D667C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -62,7 +61,6 @@
 		DAB006F31FC7E10100D667C1 /* DiscogsDatabaseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DiscogsDatabaseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAB006F71FC7E10100D667C1 /* DiscogsDatabaseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscogsDatabaseUITests.swift; sourceTree = "<group>"; };
 		DAB006F91FC7E10100D667C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DAB007091FC8614000D667C1 /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,10 +112,9 @@
 			isa = PBXGroup;
 			children = (
 				DAB006D71FC7E10100D667C1 /* AppDelegate.swift */,
-				DAB006D91FC7E10100D667C1 /* ViewController.swift */,
-				DA071B4C1FCBECEB0060DBBC /* SearchItem.swift */,
-				DA071B4E1FCBF1D80060DBBC /* SearchTableViewCell.swift */,
-				DAB007091FC8614000D667C1 /* SearchTableViewController.swift */,
+				DA071B4C1FCBECEB0060DBBC /* DatabaseSearchItem.swift */,
+				DA071B4E1FCBF1D80060DBBC /* DatabaseSearchCell.swift */,
+				DAB006D91FC7E10100D667C1 /* DatabaseSearchController.swift */,
 				DA07EB991FD01E7300B0B0A3 /* ArtistRelease.swift */,
 				DA071B571FCEE0A30060DBBC /* ArtistViewController.swift */,
 				DA07EB9D1FD1462B00B0B0A3 /* Track.swift */,
@@ -283,10 +280,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DAB006DA1FC7E10100D667C1 /* ViewController.swift in Sources */,
-				DAB0070A1FC8614000D667C1 /* SearchTableViewController.swift in Sources */,
-				DA071B4F1FCBF1D80060DBBC /* SearchTableViewCell.swift in Sources */,
-				DA071B4D1FCBECEB0060DBBC /* SearchItem.swift in Sources */,
+				DAB006DA1FC7E10100D667C1 /* DatabaseSearchController.swift in Sources */,
+				DA071B4F1FCBF1D80060DBBC /* DatabaseSearchCell.swift in Sources */,
+				DA071B4D1FCBECEB0060DBBC /* DatabaseSearchItem.swift in Sources */,
 				DA071B581FCEE0A30060DBBC /* ArtistViewController.swift in Sources */,
 				DA07EB9E1FD1462B00B0B0A3 /* Track.swift in Sources */,
 				DAB006D81FC7E10100D667C1 /* AppDelegate.swift in Sources */,

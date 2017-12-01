@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  DatabaseSearchController
 //  DiscogsDatabase
 //
 //  Created by Andy Chukavin on 24/11/2017.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource {
+class DatabaseSearchController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var searchField: UITextField!
     @IBOutlet weak var tableView: UITableView!
 
@@ -16,7 +16,7 @@ class ViewController: UIViewController, UITableViewDataSource {
     
     private var searchDelay = 0.3
 
-    var artists = [SearchItem]()
+    var artists = [DatabaseSearchItem]()
     var thumbnailDownloads = [Int: URLSessionDataTask]()
 
     override func viewDidLoad() {
@@ -81,7 +81,7 @@ class ViewController: UIViewController, UITableViewDataSource {
                 if let json = try JSONSerialization.jsonObject(with: data!, options: []) as? NSDictionary {
                     if let results = json["results"] as? [[String: Any]] {
                         for result in results {
-                            let searchItem = SearchItem(thumbnailUrl: URL(string: result["thumb"] as? String ?? ""),
+                            let searchItem = DatabaseSearchItem(thumbnailUrl: URL(string: result["thumb"] as? String ?? ""),
                                                         thumbnailImage: nil,
                                                         title: result["title"] as? String ?? "",
                                                         url: URL(string: result["resource_url"] as? String ?? ""))
@@ -119,7 +119,7 @@ class ViewController: UIViewController, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "artistCellIdentifier", for: indexPath) as! SearchTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "artistCellIdentifier", for: indexPath) as! DatabaseSearchCell
         let row = indexPath.row
         let artist = artists[row]
 

@@ -1,5 +1,5 @@
 //
-//  ArtistTableViewCell.swift
+//  DatabaseSearchCell
 //  DiscogsDatabase
 //
 //  Created by Andy Chukavin on 27/11/2017.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SearchTableViewCell: UITableViewCell {
+class DatabaseSearchCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var thumbnailView: UIImageView!
     

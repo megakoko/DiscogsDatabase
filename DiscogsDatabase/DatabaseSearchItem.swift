@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct SearchItem {
+struct DatabaseSearchItem {
     let thumbnailUrl: URL?
     var thumbnailImage: UIImage?
     let title: String
