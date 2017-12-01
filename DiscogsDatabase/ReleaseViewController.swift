@@ -14,11 +14,68 @@ class ReleaseViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var yearLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
 
-    private var releaseUrl: URL? = nil
+    private var releaseUrl: URL?
+
+    private var trackCollections = [TrackCollection]()
 
     func setReleaseUrl(_ url: URL) {
         releaseUrl = url
-        print(url)
+        downloadReleaseInfo()
+    }
+
+    private func downloadReleaseInfo() {
+        let releasesRequest = URLRequest(url: releaseUrl!)
+        let task = URLSession.shared.dataTask(with: releasesRequest) {
+            data, response, error in
+
+            if error != nil {
+                print("Failed to fetch release information")
+                return
+            }
+
+            do {
+                if let json = try JSONSerialization.jsonObject(with: data!, options: []) as? NSDictionary {
+                    if let tracklist = json["tracklist"] as? [[String:Any]] {
+                        for item in tracklist {
+                            let type = item["type_"] as? String
+                            if type == "heading" {
+                                self.trackCollections += [TrackCollection(tracks: [Track](),
+                                                                          title: item["title"] as? String,
+                                                                          duration: item["duration"] as? String)]
+                            } else if type == "track" {
+                                if self.trackCollections.isEmpty {
+                                    self.trackCollections += [TrackCollection(tracks: [Track](), title: nil, duration: nil)]
+                                }
+
+                                var artists = [String]()
+                                if let artistObjects = item["artists"] as? [[String:Any]] {
+                                    for artist in artistObjects {
+                                        if let name = artist["name"] as? String {
+                                            artists += [name]
+                                        }
+                                    }
+                                }
+
+                                let track = Track(artists: artists,
+                                                  position: item["position"] as? String,
+                                                  title: item["title"] as? String,
+                                                  duration: item["duration"] as? String)
+
+                                self.trackCollections[self.trackCollections.count-1].tracks += [track]
+                            }
+                        }
+                    }
+                }
+            } catch let error as NSError {
+                print(error.localizedDescription)
+            }
+
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+
+        task.resume()
     }
 
     override func viewDidLoad() {
@@ -33,23 +90,23 @@ class ReleaseViewController: UIViewController, UITableViewDataSource {
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return trackCollections.count
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2 + section*2
+        return trackCollections[section].tracks.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "releaseCellIdentifier", for: indexPath)
 
-        cell.textLabel?.text = "Track #\(indexPath.row)"
+        cell.textLabel?.text = trackCollections[indexPath.section].tracks[indexPath.row].title
 
         return cell
     }
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Disc #\(section)"
+        return trackCollections[section].title
     }
 
     /*
