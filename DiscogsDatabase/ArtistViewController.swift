@@ -122,6 +122,21 @@ class ArtistViewController: UIViewController, UITableViewDataSource {
         // Dispose of any resources that can be recreated.
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "releaseSegue" {
+            let path = tableView.indexPathForSelectedRow
+            let release = artistReleases[path!.row]
+
+            if release.url == nil {
+                return
+            }
+
+            let releaseViewController = segue.destination as! ReleaseViewController
+            releaseViewController.setReleaseUrl(release.url!)
+            releaseViewController.title = release.title
+        }
+    }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return artistReleases.count
     }

@@ -14,6 +14,13 @@ class ReleaseViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var yearLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
 
+    private var releaseUrl: URL? = nil
+
+    func setReleaseUrl(_ url: URL) {
+        releaseUrl = url
+        print(url)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
