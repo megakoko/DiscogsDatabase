@@ -6,6 +6,7 @@
 //  Copyright © 2017 Andy Chukavin. All rights reserved.
 //
 
+#if false
 import UIKit
 
 protocol TableProtocol {
@@ -137,3 +138,4 @@ class SearchTableViewController: UITableViewController, TableProtocol {
         return cell
     }
 }
+#endif
