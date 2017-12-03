@@ -116,11 +116,13 @@ class ReleaseViewController: UIViewController, UITableViewDataSource {
 
         // Update table's header size to fit artist's description
         if let headerView = tableView.tableHeaderView {
-            let size = headerView.systemLayoutSizeFitting(UILayoutFittingCompressedSize)
-            if headerView.frame.size != size {
-                headerView.frame.size = size
+            let height = headerView.systemLayoutSizeFitting(UILayoutFittingCompressedSize).height
+            var headerFrame = headerView.frame
+
+            if height != headerFrame.size.height {
+                headerFrame.size.height = height
+                headerView.frame = headerFrame
                 tableView.tableHeaderView = headerView
-                tableView.layoutIfNeeded()
             }
         }
     }

@@ -111,6 +111,8 @@ class DatabaseSearchController: UIViewController, UITableViewDataSource {
                     artistView.setArtistUrl(artist.url!)
                 }
             }
+
+            navigationController?.setNavigationBarHidden(false, animated: true)
         }
     }
 
