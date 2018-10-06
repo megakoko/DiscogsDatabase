@@ -52,7 +52,7 @@ class ReleaseViewController: UIViewController, UITableViewDataSource {
                     DispatchQueue.main.async {
                         self.titleLabel.text = title
                         if !releaseArtistNames.isEmpty {
-                            self.artistLabel.text = "by " + releaseArtistNames.joined(separator: ", ")
+                            self.artistLabel.text = releaseArtistNames.joined(separator: ", ")
                         }
                         if year != nil {
                             self.yearLabel.text = "\(year!)"
@@ -108,7 +108,10 @@ class ReleaseViewController: UIViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        titleLabel.text = nil
+        artistLabel.text = nil
+        genreLabel.text = nil
+        yearLabel.text = nil
     }
 
     override func viewDidLayoutSubviews() {
