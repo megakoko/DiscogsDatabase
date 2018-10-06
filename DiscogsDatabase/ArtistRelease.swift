@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct ArtistRelease {
     let artist: String?
@@ -14,5 +15,6 @@ struct ArtistRelease {
     let title: String?
     let year: Int?
     let thumbnailUrl: URL?
+    var thumbnailImage: UIImage?
     let url: URL?
 }

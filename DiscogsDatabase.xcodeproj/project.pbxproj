@@ -14,6 +14,7 @@
 		DA07EB9C1FD11EFD00B0B0A3 /* ReleaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA07EB9B1FD11EFD00B0B0A3 /* ReleaseViewController.swift */; };
 		DA07EB9E1FD1462B00B0B0A3 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA07EB9D1FD1462B00B0B0A3 /* Track.swift */; };
 		DA07EBA01FD1463F00B0B0A3 /* TrackCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA07EB9F1FD1463F00B0B0A3 /* TrackCollection.swift */; };
+		DA47B5302168DAA700E06C78 /* ArtistReleaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA47B52F2168DAA700E06C78 /* ArtistReleaseCell.swift */; };
 		DAB006D81FC7E10100D667C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB006D71FC7E10100D667C1 /* AppDelegate.swift */; };
 		DAB006DA1FC7E10100D667C1 /* DatabaseSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB006D91FC7E10100D667C1 /* DatabaseSearchController.swift */; };
 		DAB006DD1FC7E10100D667C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAB006DB1FC7E10100D667C1 /* Main.storyboard */; };
@@ -48,6 +49,7 @@
 		DA07EB9B1FD11EFD00B0B0A3 /* ReleaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleaseViewController.swift; sourceTree = "<group>"; };
 		DA07EB9D1FD1462B00B0B0A3 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		DA07EB9F1FD1463F00B0B0A3 /* TrackCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCollection.swift; sourceTree = "<group>"; };
+		DA47B52F2168DAA700E06C78 /* ArtistReleaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistReleaseCell.swift; sourceTree = "<group>"; };
 		DAB006D41FC7E10100D667C1 /* DiscogsDatabase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiscogsDatabase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAB006D71FC7E10100D667C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DAB006D91FC7E10100D667C1 /* DatabaseSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseSearchController.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				DA071B4E1FCBF1D80060DBBC /* DatabaseSearchCell.swift */,
 				DAB006D91FC7E10100D667C1 /* DatabaseSearchController.swift */,
 				DA07EB991FD01E7300B0B0A3 /* ArtistRelease.swift */,
+				DA47B52F2168DAA700E06C78 /* ArtistReleaseCell.swift */,
 				DA071B571FCEE0A30060DBBC /* ArtistViewController.swift */,
 				DA07EB9D1FD1462B00B0B0A3 /* Track.swift */,
 				DA07EB9F1FD1463F00B0B0A3 /* TrackCollection.swift */,
@@ -283,6 +286,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA47B5302168DAA700E06C78 /* ArtistReleaseCell.swift in Sources */,
 				DAB006DA1FC7E10100D667C1 /* DatabaseSearchController.swift in Sources */,
 				DA071B4F1FCBF1D80060DBBC /* DatabaseSearchCell.swift in Sources */,
 				DA071B4D1FCBECEB0060DBBC /* DatabaseSearchItem.swift in Sources */,

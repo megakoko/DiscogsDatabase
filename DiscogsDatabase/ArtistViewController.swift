@@ -16,6 +16,7 @@ class ArtistViewController: UIViewController, UITableViewDataSource {
     private var artistUrl: URL? = nil
 
     private var artistReleases = [ArtistRelease]()
+    var thumbnailDownloads = [Int: URLSessionDataTask]()
 
     private var lastReleasesPage: Int? = nil
 
@@ -30,6 +31,11 @@ class ArtistViewController: UIViewController, UITableViewDataSource {
     private func clearData() {
         artistReleases.removeAll()
         lastReleasesPage = nil
+
+        for task in thumbnailDownloads.values {
+            task.cancel()
+        }
+        thumbnailDownloads.removeAll()
     }
 
     private func downloadArtistInfo() {
@@ -75,6 +81,7 @@ class ArtistViewController: UIViewController, UITableViewDataSource {
         urlComponents!.queryItems = [URLQueryItem(name: "page", value: "\(page)")]
 
         let releasesRequest = URLRequest(url: urlComponents!.url!)
+
         let task = URLSession.shared.dataTask(with: releasesRequest) {
             data, response, error in
 
@@ -94,6 +101,7 @@ class ArtistViewController: UIViewController, UITableViewDataSource {
                                                               title: release["title"] as? String,
                                                               year: release["year"] as? Int,
                                                               thumbnailUrl: URL(string: release["thumb"] as? String ?? ""),
+                                                              thumbnailImage: nil,
                                                               url: URL(string: release["resource_url"] as? String ?? ""))
                             self.artistReleases += [artistRelease]
                         }
@@ -160,11 +168,37 @@ class ArtistViewController: UIViewController, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "artistReleaseCellIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "artistReleaseCellIdentifier", for: indexPath) as! ArtistReleaseCell
 
-        let artistRelease = artistReleases[indexPath.row]
+        let row = indexPath.row;
+        let artistRelease = artistReleases[row]
 
-        cell.textLabel?.text = artistRelease.title
+        cell.nameLabel.text = artistRelease.title
+
+        if artistRelease.thumbnailImage == nil && artistRelease.thumbnailUrl != nil {
+            let request = URLRequest(url: artistRelease.thumbnailUrl!)
+            let task = URLSession.shared.dataTask(with: request) {
+                data, response, error in
+
+                if error != nil {
+                    print("Failed to download artist thumbnail. Error: \(error!)")
+                    return
+                }
+
+                self.thumbnailDownloads[row] = nil
+
+                if let thumbnail = UIImage(data: data!) {
+                    self.artistReleases[row].thumbnailImage = thumbnail
+                    DispatchQueue.main.async {
+                        cell.thumbnailView.image = thumbnail
+                    }
+                }
+            }
+
+            thumbnailDownloads[row] = task
+
+            task.resume()
+        }
 
         return cell
 
