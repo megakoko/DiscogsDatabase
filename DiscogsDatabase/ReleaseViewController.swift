@@ -9,7 +9,6 @@
 import UIKit
 
 class ReleaseViewController: UIViewController, UITableViewDataSource {
-    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var artistLabel: UILabel!
     @IBOutlet weak var genreLabel: UILabel!
     @IBOutlet weak var yearLabel: UILabel!
@@ -36,7 +35,6 @@ class ReleaseViewController: UIViewController, UITableViewDataSource {
 
             do {
                 if let json = try JSONSerialization.jsonObject(with: data!, options: []) as? NSDictionary {
-                    let title = json["title"] as? String
                     let year = json["year"] as? Int
                     let genres = json["genres"] as? [String]
 
@@ -50,7 +48,6 @@ class ReleaseViewController: UIViewController, UITableViewDataSource {
                     }
 
                     DispatchQueue.main.async {
-                        self.titleLabel.text = title
                         if !releaseArtistNames.isEmpty {
                             self.artistLabel.text = releaseArtistNames.joined(separator: ", ")
                         }
@@ -108,7 +105,6 @@ class ReleaseViewController: UIViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        titleLabel.text = nil
         artistLabel.text = nil
         genreLabel.text = nil
         yearLabel.text = nil

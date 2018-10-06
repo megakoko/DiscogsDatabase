@@ -9,7 +9,6 @@
 import UIKit
 
 class ArtistViewController: UIViewController, UITableViewDataSource {
-    @IBOutlet weak var artistNameLabel: UILabel!
     @IBOutlet weak var artistProfileLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
 
@@ -51,7 +50,6 @@ class ArtistViewController: UIViewController, UITableViewDataSource {
 
             do {
                 if let json = try JSONSerialization.jsonObject(with: data!, options: []) as? NSDictionary {
-                    let name = json["name"] as? String
                     var profile = json["profile"] as? String
 
                     if profile != nil {
@@ -59,7 +57,6 @@ class ArtistViewController: UIViewController, UITableViewDataSource {
                     }
 
                     DispatchQueue.main.async {
-                        self.artistNameLabel.text = name ?? ""
                         self.artistProfileLabel.text = profile ?? ""
                     }
                 }
@@ -130,7 +127,6 @@ class ArtistViewController: UIViewController, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        artistNameLabel.text = nil
         artistProfileLabel.text = nil
     }
 
