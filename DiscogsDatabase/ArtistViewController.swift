@@ -80,7 +80,16 @@ class ArtistViewController: UIViewController, UITableViewDataSource {
         urlComponents!.path += "/releases"
         urlComponents!.queryItems = [URLQueryItem(name: "page", value: "\(page)")]
 
-        let releasesRequest = URLRequest(url: urlComponents!.url!)
+        var releasesRequest = URLRequest(url: urlComponents!.url!)
+
+        let key = ProcessInfo.processInfo.environment["DiscogsKey"] ?? ""
+        let secret = ProcessInfo.processInfo.environment["DiscogsSecret"] ?? ""
+
+        if key.isEmpty || secret.isEmpty {
+            print("Discogs API key or secret is empty")
+        }
+
+        releasesRequest.addValue("Discogs key=\(key), secret=\(secret)", forHTTPHeaderField: "Authorization")
 
         let task = URLSession.shared.dataTask(with: releasesRequest) {
             data, response, error in
