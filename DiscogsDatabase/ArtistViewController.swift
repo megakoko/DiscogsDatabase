@@ -122,7 +122,7 @@ class ArtistViewController: UIViewController, UITableViewDataSource {
 
         // Update table's header size to fit artist's description
         if let headerView = tableView.tableHeaderView {
-            let height = headerView.systemLayoutSizeFitting(UILayoutFittingCompressedSize).height
+            let height = headerView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize).height
             var headerFrame = headerView.frame
 
             if height != headerFrame.size.height {
