@@ -24,8 +24,8 @@ class DatabaseSearchController: UIViewController, UITableViewDataSource {
 
         if let defaultSearchText = ProcessInfo.processInfo.environment["DefaultSearchText"] {
             searchField.text = defaultSearchText
-            search()
         }
+        search()
     }
 
     override func didReceiveMemoryWarning() {
