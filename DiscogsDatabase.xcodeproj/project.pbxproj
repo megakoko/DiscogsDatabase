@@ -92,6 +92,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DA012EE62169F4E7004BE3C9 /* DatabaseSearch */ = {
+			isa = PBXGroup;
+			children = (
+				DA071B4C1FCBECEB0060DBBC /* DatabaseSearchItem.swift */,
+				DA071B4E1FCBF1D80060DBBC /* DatabaseSearchCell.swift */,
+				DA47B53121691B1B00E06C78 /* DatabaseSearchModel.swift */,
+				DAB006D91FC7E10100D667C1 /* DatabaseSearchController.swift */,
+			);
+			path = DatabaseSearch;
+			sourceTree = "<group>";
+		};
+		DA012EE72169F504004BE3C9 /* Artist */ = {
+			isa = PBXGroup;
+			children = (
+				DA07EB991FD01E7300B0B0A3 /* ArtistRelease.swift */,
+				DA47B52F2168DAA700E06C78 /* ArtistReleaseCell.swift */,
+				DA071B571FCEE0A30060DBBC /* ArtistViewController.swift */,
+			);
+			path = Artist;
+			sourceTree = "<group>";
+		};
+		DA012EE82169F515004BE3C9 /* Release */ = {
+			isa = PBXGroup;
+			children = (
+				DA07EB9D1FD1462B00B0B0A3 /* Track.swift */,
+				DA07EB9F1FD1463F00B0B0A3 /* TrackCollection.swift */,
+				DA07EB9B1FD11EFD00B0B0A3 /* ReleaseViewController.swift */,
+			);
+			path = Release;
+			sourceTree = "<group>";
+		};
 		DAB006CB1FC7E10100D667C1 = {
 			isa = PBXGroup;
 			children = (
@@ -115,17 +146,10 @@
 		DAB006D61FC7E10100D667C1 /* DiscogsDatabase */ = {
 			isa = PBXGroup;
 			children = (
+				DA012EE62169F4E7004BE3C9 /* DatabaseSearch */,
+				DA012EE72169F504004BE3C9 /* Artist */,
+				DA012EE82169F515004BE3C9 /* Release */,
 				DAB006D71FC7E10100D667C1 /* AppDelegate.swift */,
-				DA071B4C1FCBECEB0060DBBC /* DatabaseSearchItem.swift */,
-				DA071B4E1FCBF1D80060DBBC /* DatabaseSearchCell.swift */,
-				DA47B53121691B1B00E06C78 /* DatabaseSearchModel.swift */,
-				DAB006D91FC7E10100D667C1 /* DatabaseSearchController.swift */,
-				DA07EB991FD01E7300B0B0A3 /* ArtistRelease.swift */,
-				DA47B52F2168DAA700E06C78 /* ArtistReleaseCell.swift */,
-				DA071B571FCEE0A30060DBBC /* ArtistViewController.swift */,
-				DA07EB9D1FD1462B00B0B0A3 /* Track.swift */,
-				DA07EB9F1FD1463F00B0B0A3 /* TrackCollection.swift */,
-				DA07EB9B1FD11EFD00B0B0A3 /* ReleaseViewController.swift */,
 				DAB006DB1FC7E10100D667C1 /* Main.storyboard */,
 				DAB006E01FC7E10100D667C1 /* LaunchScreen.storyboard */,
 				DAB006E31FC7E10100D667C1 /* Info.plist */,
