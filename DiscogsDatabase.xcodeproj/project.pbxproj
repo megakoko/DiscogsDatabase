@@ -21,8 +21,6 @@
 		DAB006DD1FC7E10100D667C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAB006DB1FC7E10100D667C1 /* Main.storyboard */; };
 		DAB006DF1FC7E10100D667C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAB006DE1FC7E10100D667C1 /* Assets.xcassets */; };
 		DAB006E21FC7E10100D667C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAB006E01FC7E10100D667C1 /* LaunchScreen.storyboard */; };
-		DAB006ED1FC7E10100D667C1 /* DiscogsDatabaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB006EC1FC7E10100D667C1 /* DiscogsDatabaseTests.swift */; };
-		DAB006F81FC7E10100D667C1 /* DiscogsDatabaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB006F71FC7E10100D667C1 /* DiscogsDatabaseUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,11 +58,7 @@
 		DAB006E11FC7E10100D667C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DAB006E31FC7E10100D667C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DAB006E81FC7E10100D667C1 /* DiscogsDatabaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DiscogsDatabaseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DAB006EC1FC7E10100D667C1 /* DiscogsDatabaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscogsDatabaseTests.swift; sourceTree = "<group>"; };
-		DAB006EE1FC7E10100D667C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DAB006F31FC7E10100D667C1 /* DiscogsDatabaseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DiscogsDatabaseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DAB006F71FC7E10100D667C1 /* DiscogsDatabaseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscogsDatabaseUITests.swift; sourceTree = "<group>"; };
-		DAB006F91FC7E10100D667C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,8 +121,6 @@
 			isa = PBXGroup;
 			children = (
 				DAB006D61FC7E10100D667C1 /* DiscogsDatabase */,
-				DAB006EB1FC7E10100D667C1 /* DiscogsDatabaseTests */,
-				DAB006F61FC7E10100D667C1 /* DiscogsDatabaseUITests */,
 				DAB006D51FC7E10100D667C1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -156,24 +148,6 @@
 				DAB006DE1FC7E10100D667C1 /* Assets.xcassets */,
 			);
 			path = DiscogsDatabase;
-			sourceTree = "<group>";
-		};
-		DAB006EB1FC7E10100D667C1 /* DiscogsDatabaseTests */ = {
-			isa = PBXGroup;
-			children = (
-				DAB006EC1FC7E10100D667C1 /* DiscogsDatabaseTests.swift */,
-				DAB006EE1FC7E10100D667C1 /* Info.plist */,
-			);
-			path = DiscogsDatabaseTests;
-			sourceTree = "<group>";
-		};
-		DAB006F61FC7E10100D667C1 /* DiscogsDatabaseUITests */ = {
-			isa = PBXGroup;
-			children = (
-				DAB006F71FC7E10100D667C1 /* DiscogsDatabaseUITests.swift */,
-				DAB006F91FC7E10100D667C1 /* Info.plist */,
-			);
-			path = DiscogsDatabaseUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -331,7 +305,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DAB006ED1FC7E10100D667C1 /* DiscogsDatabaseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,7 +312,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DAB006F81FC7E10100D667C1 /* DiscogsDatabaseUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
