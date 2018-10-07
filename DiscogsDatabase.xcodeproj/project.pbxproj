@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DA012EEA2169F71D004BE3C9 /* ArtistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA012EE92169F71D004BE3C9 /* ArtistModel.swift */; };
+		DA012EEC216A2118004BE3C9 /* ReleaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA012EEB216A2118004BE3C9 /* ReleaseModel.swift */; };
 		DA071B4D1FCBECEB0060DBBC /* DatabaseSearchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA071B4C1FCBECEB0060DBBC /* DatabaseSearchItem.swift */; };
 		DA071B4F1FCBF1D80060DBBC /* DatabaseSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA071B4E1FCBF1D80060DBBC /* DatabaseSearchCell.swift */; };
 		DA071B581FCEE0A30060DBBC /* ArtistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA071B571FCEE0A30060DBBC /* ArtistViewController.swift */; };
@@ -43,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		DA012EE92169F71D004BE3C9 /* ArtistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistModel.swift; sourceTree = "<group>"; };
+		DA012EEB216A2118004BE3C9 /* ReleaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleaseModel.swift; sourceTree = "<group>"; };
 		DA071B4C1FCBECEB0060DBBC /* DatabaseSearchItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseSearchItem.swift; sourceTree = "<group>"; };
 		DA071B4E1FCBF1D80060DBBC /* DatabaseSearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseSearchCell.swift; sourceTree = "<group>"; };
 		DA071B571FCEE0A30060DBBC /* ArtistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 			children = (
 				DA07EB9D1FD1462B00B0B0A3 /* Track.swift */,
 				DA07EB9F1FD1463F00B0B0A3 /* TrackCollection.swift */,
+				DA012EEB216A2118004BE3C9 /* ReleaseModel.swift */,
 				DA07EB9B1FD11EFD00B0B0A3 /* ReleaseViewController.swift */,
 			);
 			path = Release;
@@ -296,6 +299,7 @@
 				DA071B4D1FCBECEB0060DBBC /* DatabaseSearchItem.swift in Sources */,
 				DA012EEA2169F71D004BE3C9 /* ArtistModel.swift in Sources */,
 				DA071B581FCEE0A30060DBBC /* ArtistViewController.swift in Sources */,
+				DA012EEC216A2118004BE3C9 /* ReleaseModel.swift in Sources */,
 				DA47B53221691B1B00E06C78 /* DatabaseSearchModel.swift in Sources */,
 				DA07EB9E1FD1462B00B0B0A3 /* Track.swift in Sources */,
 				DAB006D81FC7E10100D667C1 /* AppDelegate.swift in Sources */,

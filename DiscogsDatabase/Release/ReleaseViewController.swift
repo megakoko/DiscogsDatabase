@@ -14,92 +14,13 @@ class ReleaseViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var yearLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
 
-    private var releaseUrl: URL?
-
-    private var trackCollections = [TrackCollection]()
+    private var model: ReleaseModel? = nil
 
     func setReleaseUrl(_ url: URL) {
-        releaseUrl = url
-        downloadReleaseInfo()
-    }
-
-    private func downloadReleaseInfo() {
-        let releasesRequest = URLRequest(url: releaseUrl!)
-        let task = URLSession.shared.dataTask(with: releasesRequest) {
-            data, response, error in
-
-            if error != nil {
-                print("Failed to fetch release information")
-                return
-            }
-
-            do {
-                if let json = try JSONSerialization.jsonObject(with: data!, options: []) as? NSDictionary {
-                    let year = json["year"] as? Int
-                    let genres = json["genres"] as? [String]
-
-                    var releaseArtistNames = [String]()
-                    if let releaseArtists = json["artists"] as? [[String:Any]] {
-                        for releaseArtist in releaseArtists {
-                            if let name = releaseArtist["name"] as? String {
-                                releaseArtistNames += [name]
-                            }
-                        }
-                    }
-
-                    DispatchQueue.main.async {
-                        if !releaseArtistNames.isEmpty {
-                            self.artistLabel.text = releaseArtistNames.joined(separator: ", ")
-                        }
-                        if year != nil {
-                            self.yearLabel.text = "\(year!)"
-                        }
-                        if genres != nil {
-                            self.genreLabel.text = genres!.joined(separator: ", ")
-                        }
-                    }
-
-                    if let tracklist = json["tracklist"] as? [[String:Any]] {
-                        for item in tracklist {
-                            let type = item["type_"] as? String
-                            if type == "heading" {
-                                self.trackCollections += [TrackCollection(tracks: [Track](),
-                                                                          title: item["title"] as? String,
-                                                                          duration: item["duration"] as? String)]
-                            } else if type == "track" {
-                                if self.trackCollections.isEmpty {
-                                    self.trackCollections += [TrackCollection(tracks: [Track](), title: nil, duration: nil)]
-                                }
-
-                                var artists = [String]()
-                                if let artistObjects = item["artists"] as? [[String:Any]] {
-                                    for artist in artistObjects {
-                                        if let name = artist["name"] as? String {
-                                            artists += [name]
-                                        }
-                                    }
-                                }
-
-                                let track = Track(artists: artists,
-                                                  position: item["position"] as? String,
-                                                  title: item["title"] as? String,
-                                                  duration: item["duration"] as? String)
-
-                                self.trackCollections[self.trackCollections.count-1].tracks += [track]
-                            }
-                        }
-                    }
-                }
-            } catch let error as NSError {
-                print(error.localizedDescription)
-            }
-
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
+        if model == nil {
+            model = ReleaseModel()
         }
-
-        task.resume()
+        model!.setReleaseUrl(url)
     }
 
     override func viewDidLoad() {
@@ -108,6 +29,15 @@ class ReleaseViewController: UIViewController, UITableViewDataSource {
         artistLabel.text = nil
         genreLabel.text = nil
         yearLabel.text = nil
+
+        NotificationCenter.default.addObserver(forName: Notification.Name(rawValue: ReleaseModel.dataUpdatedNotification),
+                                               object: nil,
+                                               queue: nil) { (notification: Notification) in
+            self.artistLabel.text = self.model?.artist
+            self.genreLabel.text = self.model?.genre
+            self.yearLabel.text = self.model?.year
+            self.tableView.reloadData()
+        }
     }
 
     override func viewDidLayoutSubviews() {
@@ -132,33 +62,22 @@ class ReleaseViewController: UIViewController, UITableViewDataSource {
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return trackCollections.count
+        return model!.trackCollections.count
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return trackCollections[section].tracks.count
+        return model!.trackCollections[section].tracks.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "releaseCellIdentifier", for: indexPath)
 
-        cell.textLabel?.text = trackCollections[indexPath.section].tracks[indexPath.row].title
+        cell.textLabel?.text = model!.trackCollections[indexPath.section].tracks[indexPath.row].title
 
         return cell
     }
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return trackCollections[section].title
+        return model!.trackCollections[section].title
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
