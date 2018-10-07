@@ -28,21 +28,21 @@ class ArtistViewController: UIViewController, UITableViewDataSource {
 
         NotificationCenter.default.addObserver(forName: Notification.Name(rawValue: ArtistModel.artistInfoUpdateNotification),
                                                object: nil,
-                                               queue: nil) { (notification: Notification) in
+                                               queue: nil) { _ in
             self.artistProfileLabel.text = self.model!.profile
         }
 
 
         NotificationCenter.default.addObserver(forName: Notification.Name(rawValue: ArtistModel.artistReleasesUpdateNotification),
                                                object: nil,
-                                               queue: nil) { (notification: Notification) in
+                                               queue: nil) { _ in
             self.tableView.reloadData()
         }
 
         NotificationCenter.default.addObserver(forName: Notification.Name(rawValue: ArtistModel.releaseThumbnailUpdateNotification),
                                                object: nil,
-                                               queue: nil) { (notification: Notification) in
-            if let row = notification.userInfo?[ArtistModel.releaseThumbnailIndex] as? Int {
+                                               queue: nil) {
+            if let row = $0.userInfo?[ArtistModel.releaseThumbnailIndex] as? Int {
                 let indexPath = IndexPath(row: row, section: 0)
                 self.tableView.reloadRows(at: [indexPath], with: .none)
             }

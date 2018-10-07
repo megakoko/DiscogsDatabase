@@ -19,15 +19,20 @@ class DatabaseSearchController: UIViewController, UITableViewDataSource {
 
         model = DatabaseSearchModel()
 
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(onDataUpdated),
-                                               name: Notification.Name(rawValue: DatabaseSearchModel.artistListUpdateNotification),
-                                               object: nil)
+        NotificationCenter.default.addObserver(forName: Notification.Name(rawValue: DatabaseSearchModel.artistListUpdateNotification),
+                                               object: nil,
+                                               queue: nil) { _ in
+            self.tableView.reloadData()
+        }
 
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(onThumbnailUpdated(notification:)),
-                                               name: Notification.Name(rawValue: DatabaseSearchModel.artistThumbnailUpdateNotification),
-                                               object: nil)
+        NotificationCenter.default.addObserver(forName: Notification.Name(rawValue: DatabaseSearchModel.artistThumbnailUpdateNotification),
+                                               object: nil,
+                                               queue: nil) {
+            if let row = $0.userInfo?[DatabaseSearchModel.artistThumbnailIndex] as? Int {
+                let indexPath = IndexPath(row: row, section: 0)
+                self.tableView.reloadRows(at: [indexPath], with: .none)
+            }
+        }
 
         if let defaultSearchText = ProcessInfo.processInfo.environment["DefaultSearchText"] {
             searchField.text = defaultSearchText
@@ -60,17 +65,6 @@ class DatabaseSearchController: UIViewController, UITableViewDataSource {
             }
 
             navigationController?.setNavigationBarHidden(false, animated: true)
-        }
-    }
-
-    @objc func onDataUpdated() {
-        tableView.reloadData()
-    }
-
-    @objc func onThumbnailUpdated(notification: Notification) {
-        if let row = notification.userInfo?[DatabaseSearchModel.artistThumbnailIndex] as? Int {
-            let indexPath = IndexPath(row: row, section: 0)
-            tableView.reloadRows(at: [indexPath], with: .none)
         }
     }
 

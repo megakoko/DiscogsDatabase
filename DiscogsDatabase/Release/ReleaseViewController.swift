@@ -32,7 +32,7 @@ class ReleaseViewController: UIViewController, UITableViewDataSource {
 
         NotificationCenter.default.addObserver(forName: Notification.Name(rawValue: ReleaseModel.dataUpdatedNotification),
                                                object: nil,
-                                               queue: nil) { (notification: Notification) in
+                                               queue: nil) { _ in
             self.artistLabel.text = self.model?.artist
             self.genreLabel.text = self.model?.genre
             self.yearLabel.text = self.model?.year
