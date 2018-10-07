@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA012EEA2169F71D004BE3C9 /* ArtistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA012EE92169F71D004BE3C9 /* ArtistModel.swift */; };
 		DA071B4D1FCBECEB0060DBBC /* DatabaseSearchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA071B4C1FCBECEB0060DBBC /* DatabaseSearchItem.swift */; };
 		DA071B4F1FCBF1D80060DBBC /* DatabaseSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA071B4E1FCBF1D80060DBBC /* DatabaseSearchCell.swift */; };
 		DA071B581FCEE0A30060DBBC /* ArtistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA071B571FCEE0A30060DBBC /* ArtistViewController.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DA012EE92169F71D004BE3C9 /* ArtistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistModel.swift; sourceTree = "<group>"; };
 		DA071B4C1FCBECEB0060DBBC /* DatabaseSearchItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseSearchItem.swift; sourceTree = "<group>"; };
 		DA071B4E1FCBF1D80060DBBC /* DatabaseSearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseSearchCell.swift; sourceTree = "<group>"; };
 		DA071B571FCEE0A30060DBBC /* ArtistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 			children = (
 				DA07EB991FD01E7300B0B0A3 /* ArtistRelease.swift */,
 				DA47B52F2168DAA700E06C78 /* ArtistReleaseCell.swift */,
+				DA012EE92169F71D004BE3C9 /* ArtistModel.swift */,
 				DA071B571FCEE0A30060DBBC /* ArtistViewController.swift */,
 			);
 			path = Artist;
@@ -291,6 +294,7 @@
 				DAB006DA1FC7E10100D667C1 /* DatabaseSearchController.swift in Sources */,
 				DA071B4F1FCBF1D80060DBBC /* DatabaseSearchCell.swift in Sources */,
 				DA071B4D1FCBECEB0060DBBC /* DatabaseSearchItem.swift in Sources */,
+				DA012EEA2169F71D004BE3C9 /* ArtistModel.swift in Sources */,
 				DA071B581FCEE0A30060DBBC /* ArtistViewController.swift in Sources */,
 				DA47B53221691B1B00E06C78 /* DatabaseSearchModel.swift in Sources */,
 				DA07EB9E1FD1462B00B0B0A3 /* Track.swift in Sources */,
