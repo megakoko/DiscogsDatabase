@@ -198,19 +198,19 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" misplaced="YES" text="Genre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="omn-2r-Zqm">
-                                    <rect key="frame" x="8" y="36" width="359" height="21"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="Genre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="omn-2r-Zqm">
+                                    <rect key="frame" x="8" y="35.5" width="359" height="21"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" misplaced="YES" text="Artist" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M4b-Hi-JWU">
-                                    <rect key="frame" x="8" y="8" width="359" height="21"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Artist" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M4b-Hi-JWU">
+                                    <rect key="frame" x="8" y="8" width="359" height="20.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" misplaced="YES" text="Year" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NId-in-faw">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="Year" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NId-in-faw">
                                     <rect key="frame" x="8" y="65" width="359" height="21"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
@@ -219,16 +219,16 @@
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstItem="NId-in-faw" firstAttribute="top" secondItem="omn-2r-Zqm" secondAttribute="bottom" constant="8" id="2bK-Qr-bdA"/>
-                                <constraint firstItem="M4b-Hi-JWU" firstAttribute="top" secondItem="Gd8-Ww-Fay" secondAttribute="top" constant="8" id="F1u-P6-7vO"/>
-                                <constraint firstAttribute="trailing" secondItem="M4b-Hi-JWU" secondAttribute="trailing" constant="16" id="HIe-KX-aTa"/>
-                                <constraint firstItem="M4b-Hi-JWU" firstAttribute="leading" secondItem="Gd8-Ww-Fay" secondAttribute="leading" constant="16" id="J7c-yt-eqI"/>
-                                <constraint firstAttribute="trailing" secondItem="NId-in-faw" secondAttribute="trailing" constant="16" id="Kua-fA-EgS"/>
-                                <constraint firstItem="omn-2r-Zqm" firstAttribute="top" secondItem="M4b-Hi-JWU" secondAttribute="bottom" constant="8" id="LlO-DR-TVM"/>
-                                <constraint firstAttribute="trailing" secondItem="omn-2r-Zqm" secondAttribute="trailing" constant="16" id="dGI-vE-ML7"/>
-                                <constraint firstItem="omn-2r-Zqm" firstAttribute="leading" secondItem="Gd8-Ww-Fay" secondAttribute="leading" constant="16" id="f8K-H0-Ccm"/>
-                                <constraint firstItem="NId-in-faw" firstAttribute="leading" secondItem="Gd8-Ww-Fay" secondAttribute="leading" constant="16" id="kRB-ON-tNs"/>
-                                <constraint firstAttribute="bottom" secondItem="NId-in-faw" secondAttribute="bottom" constant="8" id="v7d-Lc-2l7"/>
+                                <constraint firstAttribute="trailing" secondItem="omn-2r-Zqm" secondAttribute="trailing" constant="8" id="2Rt-Wh-0C9"/>
+                                <constraint firstItem="omn-2r-Zqm" firstAttribute="top" secondItem="M4b-Hi-JWU" secondAttribute="bottom" constant="7" id="CcY-uv-jtp"/>
+                                <constraint firstItem="M4b-Hi-JWU" firstAttribute="top" secondItem="Gd8-Ww-Fay" secondAttribute="top" constant="8" id="Hm1-Yb-JeB"/>
+                                <constraint firstAttribute="bottom" secondItem="NId-in-faw" secondAttribute="bottom" constant="14" id="T2p-B8-Jpp"/>
+                                <constraint firstAttribute="trailing" secondItem="M4b-Hi-JWU" secondAttribute="trailing" constant="8" id="d44-ux-PFR"/>
+                                <constraint firstItem="NId-in-faw" firstAttribute="leading" secondItem="Gd8-Ww-Fay" secondAttribute="leading" constant="8" id="lhA-D8-Qdc"/>
+                                <constraint firstItem="NId-in-faw" firstAttribute="top" secondItem="omn-2r-Zqm" secondAttribute="bottom" constant="8.5" id="qx2-Tf-h3Q"/>
+                                <constraint firstItem="M4b-Hi-JWU" firstAttribute="leading" secondItem="Gd8-Ww-Fay" secondAttribute="leading" constant="8" id="s4q-rf-HLK"/>
+                                <constraint firstItem="omn-2r-Zqm" firstAttribute="leading" secondItem="Gd8-Ww-Fay" secondAttribute="leading" constant="8" id="uZK-QS-NI0"/>
+                                <constraint firstAttribute="trailing" secondItem="NId-in-faw" secondAttribute="trailing" constant="8" id="yQS-sy-XkO"/>
                             </constraints>
                         </view>
                         <prototypes>
