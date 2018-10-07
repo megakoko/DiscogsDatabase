@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DatabaseSearchController: UIViewController, UITableViewDataSource {
+class DatabaseSearchController: UIViewController, UITableViewDataSource, UITextFieldDelegate {
     @IBOutlet weak var searchField: UITextField!
     @IBOutlet weak var tableView: UITableView!
 
@@ -82,5 +82,10 @@ class DatabaseSearchController: UIViewController, UITableViewDataSource {
         }
 
         return cell
+    }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        searchField.resignFirstResponder()
+        return true
     }
 }

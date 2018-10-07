@@ -32,7 +32,7 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="DatabaseSearchController" customModule="DiscogsDatabase" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="81" estimatedRowHeight="81" sectionHeaderHeight="28" sectionFooterHeight="28" id="4AK-X5-shz">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="81" estimatedRowHeight="81" sectionHeaderHeight="28" sectionFooterHeight="28" id="4AK-X5-shz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -47,6 +47,7 @@
                                     <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                     <connections>
                                         <action selector="editingChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="rf2-j1-gUY"/>
+                                        <outlet property="delegate" destination="BYZ-38-t0r" id="gEM-6S-rRp"/>
                                     </connections>
                                 </textField>
                             </subviews>
